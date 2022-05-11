@@ -1,0 +1,150 @@
+ #define _CRT_SECURE_NO_WARNINGS  1
+
+#include<stdio.h>
+//struct S
+//{
+//	int a;
+//	char c;
+//	double d;
+//};
+//void Init(struct S* ps)
+//{
+//	ps->a = 100;
+//	ps->c = 'w';
+//	ps->d = 3.14;
+//}
+////传值
+//void Print1(struct S tmp)
+//{
+//	printf("%d %c %lf\n", tmp.a, tmp.c, tmp.d);
+//}
+////传值
+//void Print2(const struct S* ps)
+//{
+//	printf("%d %c %lf\n", ps->a, ps->c, ps->d);
+//}
+//int main()
+//{
+//	struct S s = { 0 };
+//	Init(&s);
+//	Print1(s);
+//	Print2(&s);
+//	/*s.a = 100;
+//	s.c = 'w';
+//	s.d = 3.14;
+//	printf("%d\n", s.a);*/
+//	return 0;
+//}
+//位段
+//struct S
+//{
+//	int a : 2;
+//	int b : 5;
+//	int c : 10;
+//	int d : 30;
+//};
+////47 bit - 6字节 - 6*8=48bit 
+//int main()
+//{
+//	struct S s;
+//	printf("%d\n", sizeof(s));//8
+//	return 0;
+//}
+//struct S
+//{
+//	char a : 3;
+//	char b : 4;
+//	char c : 5;
+//	char d : 4;
+//};
+//int main()
+//{
+//	struct S s = { 0 };
+//	s.a = 10;
+//	s.b = 20;
+//	s.c = 3;
+//	s.d = 4;
+//
+//
+//	return 0;
+//}
+//enum sex
+//{
+//	//枚举的可能取值 - 常量
+//	male,
+//	female,
+//	secret
+//};
+//enum color
+//{
+//	red,
+//	green,
+//	blue
+//};
+//int main()
+//{
+//	enum sex s = male;
+//	enum color c = blue;
+//	printf("%d %d %d\n", red, green, blue);
+//	return 0;
+//}
+//联合 - 联合体 - 共用体
+//union Un
+//{
+//	char c;
+//	int i;
+//
+//};
+//int main()
+//{
+//	union Un u;
+//	printf("%d\n", sizeof(u));// 4
+//	//c i 共用一块空间
+//	return 0;
+//}
+//int check_sys()
+//{
+//	union Un
+//	{
+//		char c;
+//		int i;
+//	}u;
+//	u.i = 1;
+//	//返回1，表示小端
+//	//返回0，表示大端
+//	return u.c;
+//}
+//int main()
+//{
+//	int a = 1;
+//	int ret = check_sys();
+//
+//	if (1 == ret)
+//	{
+//		printf("小端\n");
+//	}
+//	else
+//	{
+//		printf("大端\n");
+//	}
+//
+//	//低地址------------>高地址
+//	//....[][][][][11][22][33][44][][][][][][][].....大端字节序存储模式
+//	//....[][][][][44][33][22][11][][][][][][][].....小端字节序存储模式
+//	//讨论一个数据,放在内存中的存放的字节顺序
+//	//大小端字节序问题
+//	//
+//	return 0;
+//}
+enum Sex
+{
+	MALE,
+	FEMALE,
+	SECRET
+};
+int main()
+{
+	enum Sex s = MALE;
+	printf("%d\n", sizeof(s));
+	return 0;
+}
